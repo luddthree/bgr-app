@@ -1,16 +1,17 @@
 <template>
-  <div style="position: relative; width: 390px; height: 700px;">
-    <canvas ref="canvas" width="390" height="700" style="border:1px solid #000; background-color: #65acee;"></canvas>
-    <button ref="restartButton" @click="restartGame" style="display: none; position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%);">Restart</button>
-    <!-- <input type="text" ref="nameInput" placeholder="Enter your name" style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);" /> -->
-    <!-- <button @click="submitScore" style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);">Submit Score</button> -->
-    <div ref="highscoreList" style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 100%; text-align: center;"></div>
+  <div class="flex flex-col items-center">
+    <div style="position: relative; width: 390px; height: 700px;">
+      <canvas ref="canvas" width="390" height="700" style="border:1px solid #000; background-color: #65acee;"></canvas>
+      <button ref="restartButton" @click="restartGame" style="display: none; position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%);">Restart</button>
+      <!-- <input type="text" ref="nameInput" placeholder="Enter your name" style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);" /> -->
+      <!-- <button @click="submitScore" style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);">Submit Score</button> -->
+      <div ref="highscoreList" style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 100%; text-align: center;"></div>
+    </div>
+    <div style="display: flex; justify-content: center; margin-top: 10px;">
+      <button @pointerdown="moveLeft" @pointerup="stopMove" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg">Left</button>
+      <button @pointerdown="moveRight" @pointerup="stopMove" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg ml-4">Right</button>
+    </div>
   </div>
-  <div class=" p-10 bg-gray-200 text-center">
-  <button @mousedown="moveLeft" @mouseup="stopMove" @touchstart="moveLeft" @touchend="stopMove"><</button>
-  <button @mousedown="moveRight" @mouseup="stopMove" @touchstart="moveRight" @touchend="stopMove" style="margin-left: 10px;">></button>
-</div>
-
 </template>
 
 <script setup>
@@ -613,6 +614,8 @@ function stopMove() {
   }
   player.speedX = 0;
 }
+
+
 
 
 onMounted(() => {
