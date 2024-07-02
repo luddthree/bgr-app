@@ -2,14 +2,14 @@
   <div class="flex flex-col items-center">
     <div style="position: relative; width: 390px; height: 700px;">
       <canvas ref="canvas" width="390" height="700" style="border:1px solid #000; background-color: #65acee;"></canvas>
-      <button ref="restartButton" @click="restartGame" style="display: none; position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%);">Restart</button>
+      <button class="animate-pulse p-3 rounded-lg bg-blue-700 text-white hover:bg-blue-900" ref="restartButton" @click="restartGame" style="display: none; position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%);">Restart</button>
       <!-- <input type="text" ref="nameInput" placeholder="Enter your name" style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);" /> -->
       <!-- <button @click="submitScore" style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);">Submit Score</button> -->
       <div ref="highscoreList" style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 100%; text-align: center;"></div>
     </div>
     <div style="display: flex; justify-content: center; margin-top: 10px;">
-      <button @pointerdown="moveLeft" @pointerup="stopMove" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg">Left</button>
-      <button @pointerdown="moveRight" @pointerup="stopMove" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg ml-4">Right</button>
+      <button @pointerdown="moveLeft" @pointerup="stopMove" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-5 px-7 rounded-lg"><</button>
+      <button @pointerdown="moveRight" @pointerup="stopMove" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-5 px-7 rounded-lg ml-4">></button>
     </div>
   </div>
 </template>
@@ -171,16 +171,16 @@ function walls() {
 }
 
 function pill() {
-  if (pil.y >= 710) {
-    pil.y = Math.floor(Math.random() * 200);
+  if (pil.y >= 620) {
+    pil.y = Math.floor(Math.random() * 100);
     pil.x = Math.floor(Math.random() * 350);
     score++;
   }
   if (score >= 5) {
     pil1.y += 10;
     pil1.update();
-    if (pil1.y >= 710) {
-      pil1.y = Math.floor(Math.random() * 250);
+    if (pil1.y >= 620) {
+      pil1.y = Math.floor(Math.random() * 150);
       pil1.x = Math.floor(Math.random() * 350);
       score++;
     }
@@ -188,8 +188,8 @@ function pill() {
   if (score >= 15) {
     pil2.y += 11;
     pil2.update();
-    if (pil2.y >= 710) {
-      pil2.y = Math.floor(Math.random() * 250);
+    if (pil2.y >= 620) {
+      pil2.y = Math.floor(Math.random() * 200);
       pil2.x = Math.floor(Math.random() * 350);
       score++;
     }
@@ -197,8 +197,8 @@ function pill() {
   if (score >= 30) {
     pil3.y += 12;
     pil3.update();
-    if (pil3.y >= 710) {
-      pil3.y = Math.floor(Math.random() * 300);
+    if (pil3.y >= 620) {
+      pil3.y = Math.floor(Math.random() * 250);
       pil3.x = Math.floor(Math.random() * 350);
       score++;
     }
@@ -206,8 +206,8 @@ function pill() {
   if (score >= 50) {
     pil4.y += 13;
     pil4.update();
-    if (pil4.y >= 710) {
-      pil4.y = Math.floor(Math.random() * 400);
+    if (pil4.y >= 620) {
+      pil4.y = Math.floor(Math.random() * 300);
       pil4.x = Math.floor(Math.random() * 350);
       score++;
     }
@@ -215,8 +215,8 @@ function pill() {
   if (score >= 75) {
     pil5.y += 14;
     pil5.update();
-    if (pil5.y >= 710) {
-      pil5.y = Math.floor(Math.random() * 400);
+    if (pil5.y >= 620) {
+      pil5.y = Math.floor(Math.random() * 350);
       pil5.x = Math.floor(Math.random() * 350);
       score++;
     }
@@ -224,7 +224,7 @@ function pill() {
   if (score >= 100) {
     pil6.y += 15;
     pil6.update();
-    if (pil6.y >= 710) {
+    if (pil6.y >= 620) {
       pil6.y = Math.floor(Math.random() * 400);
       pil6.x = Math.floor(Math.random() * 350);
       score++;
@@ -233,7 +233,7 @@ function pill() {
   if (score >= 130) {
     pil7.y += 16;
     pil7.update();
-    if (pil7.y >= 710) {
+    if (pil7.y >= 620) {
       pil7.y = Math.floor(Math.random() * 400);
       pil7.x = Math.floor(Math.random() * 350);
       score++;
@@ -242,7 +242,7 @@ function pill() {
   if (score >= 170) {
     pil8.y += 17;
     pil8.update();
-    if (pil8.y >= 710) {
+    if (pil8.y >= 620) {
       pil8.y = Math.floor(Math.random() * 400);
       pil8.x = Math.floor(Math.random() * 350);
       score++;
@@ -251,8 +251,8 @@ function pill() {
   if (score >= 200) {
     pil9.y += 18;
     pil9.update();
-    if (pil9.y >= 710) {
-      pil9.y = Math.floor(Math.random() * 500);
+    if (pil9.y >= 620) {
+      pil9.y = Math.floor(Math.random() * 400);
       pil9.x = Math.floor(Math.random() * 350);
       score++;
     }
@@ -260,8 +260,8 @@ function pill() {
   if (score >= 250) {
     pil10.y += 19;
     pil10.update();
-    if (pil10.y >= 710) {
-      pil10.y = Math.floor(Math.random() * 500);
+    if (pil10.y >= 620) {
+      pil10.y = Math.floor(Math.random() * 400);
       pil10.x = Math.floor(Math.random() * 350);
       score++;
     }
@@ -269,8 +269,8 @@ function pill() {
   if (score >= 275) {
     pil11.y += 20;
     pil11.update();
-    if (pil11.y >= 710) {
-      pil11.y = Math.floor(Math.random() * 500);
+    if (pil11.y >= 620) {
+      pil11.y = Math.floor(Math.random() * 400);
       pil11.x = Math.floor(Math.random() * 350);
       score++;
     }
@@ -278,8 +278,8 @@ function pill() {
   if (score >= 300) {
     pil12.y += 21;
     pil12.update();
-    if (pil12.y >= 710) {
-      pil12.y = Math.floor(Math.random() * 600);
+    if (pil12.y >= 620) {
+      pil12.y = Math.floor(Math.random() * 400);
       pil12.x = Math.floor(Math.random() * 350);
       score++;
     }
@@ -292,18 +292,18 @@ function pill() {
     pil15.y += 24;
     pil15.update();
 
-    if (pil13.y >= 710) {
+    if (pil13.y >= 620) {
       pil13.y = Math.floor(Math.random() * 300);
       pil13.x = Math.floor(Math.random() * 350);
       score++;
     }
   }
-  if (pil14.y >= 710) {
+  if (pil14.y >= 620) {
     pil14.y = Math.floor(Math.random() * 300);
     pil14.x = Math.floor(Math.random() * 350);
     score++;
   }
-  if (pil15.y >= 710) {
+  if (pil15.y >= 620) {
     pil15.y = Math.floor(Math.random() * 300);
     pil15.x = Math.floor(Math.random() * 350);
     score++;
@@ -420,82 +420,82 @@ function invincible() {
 }
 
 function inv() {
-  if (pil.y >= 649) {
+  if (pil.y >= 550) {
     pil.y = Math.floor(Math.random() * 200);
     pil.x = Math.floor(Math.random() * 350);
     score++;
   }
-  if (pil1.y >= 649) {
+  if (pil1.y >= 550) {
     pil1.y = Math.floor(Math.random() * 200);
     pil1.x = Math.floor(Math.random() * 350);
     score++;
   }
-  if (pil2.y >= 649) {
+  if (pil2.y >= 550) {
     pil2.y = Math.floor(Math.random() * 200);
     pil2.x = Math.floor(Math.random() * 350);
     score++;
   }
-  if (pil3.y >= 649) {
+  if (pil3.y >= 550) {
     pil3.y = Math.floor(Math.random() * 200);
     pil3.x = Math.floor(Math.random() * 350);
     score++;
   }
-  if (pil4.y >= 649) {
+  if (pil4.y >= 550) {
     pil4.y = Math.floor(Math.random() * 200);
     pil4.x = Math.floor(Math.random() * 350);
     score++;
   }
-  if (pil5.y >= 649) {
+  if (pil5.y >= 550) {
     pil5.y = Math.floor(Math.random() * 200);
     pil5.x = Math.floor(Math.random() * 350);
     score++;
   }
-  if (pil6.y >= 649) {
+  if (pil6.y >= 550) {
     pil6.y = Math.floor(Math.random() * 200);
     pil6.x = Math.floor(Math.random() * 350);
     score++;
   }
-  if (pil7.y >= 649) {
+  if (pil7.y >= 550) {
     pil7.y = Math.floor(Math.random() * 200);
     pil7.x = Math.floor(Math.random() * 350);
     score++;
   }
-  if (pil8.y >= 649) {
+  if (pil8.y >= 550) {
     pil8.y = Math.floor(Math.random() * 200);
     pil8.x = Math.floor(Math.random() * 350);
     score++;
   }
-  if (pil9.y >= 649) {
+  if (pil9.y >= 550) {
     pil9.y = Math.floor(Math.random() * 200);
     pil9.x = Math.floor(Math.random() * 350);
     score++;
   }
-  if (pil10.y >= 649) {
+  if (pil10.y >= 550) {
     pil10.y = Math.floor(Math.random() * 200);
     pil10.x = Math.floor(Math.random() * 350);
     score++;
   }
-  if (pil11.y >= 649) {
+  if (pil11.y >= 550) {
     pil11.y = Math.floor(Math.random() * 200);
     pil11.x = Math.floor(Math.random() * 350);
     score++;
   }
-  if (pil12.y >= 649) {
+  if (pil12.y >= 550) {
     pil12.y = Math.floor(Math.random() * 200);
     pil12.x = Math.floor(Math.random() * 350);
     score++;
   }
-  if (pil13.y >= 649) {
+  if (pil13.y >= 550) {
     pil13.y = Math.floor(Math.random() * 200);
     pil13.x = Math.floor(Math.random() * 350);
     score++;
   }
-  if (pil14.y >= 649) {
+  if (pil14.y >= 550) {
     pil14.y = Math.floor(Math.random() * 200);
     pil14.x = Math.floor(Math.random() * 350);
     score++;
   }
-  if (pil15.y >= 649) {
+  if (pil15.y >= 550) {
     pil15.y = Math.floor(Math.random() * 200);
     pil15.x = Math.floor(Math.random() * 350);
     score++;
@@ -506,7 +506,7 @@ function drawScore() {
   const ctx = myGameArea.context;
   ctx.font = "20px Arial";
   ctx.fillStyle = "black";
-  ctx.fillText(`Score: ${score}`, 280, 50);
+  ctx.fillText(`Score: ${score}`, 270, 60);
 }
 
 function pillactive() {
